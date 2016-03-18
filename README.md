@@ -5,8 +5,8 @@ A simple crawler in python that takes a list of terms as input and fetches struc
 ## Dependencies
 
 - MySQLdb
-	https://github.com/farcepest/MySQLdb1
+	- https://github.com/farcepest/MySQLdb1
 - Wikipedia python library
-	https://github.com/goldsmith/Wikipedia
+	- https://github.com/goldsmith/Wikipedia
 - Natural Language Processing (NLP) Toolkit
 	- http://www.nltk.org/
