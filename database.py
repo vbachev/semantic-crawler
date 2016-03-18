@@ -13,8 +13,9 @@ def connect ():
 
 def saveData ( data ):
     ############
-    # TEMP MOCK OF DATA RECORDING
-    print data
+    # TEMP MOCK OF DATA RECORDI
+    for key in data:
+        print key + ': ' + data[key]
     return
     ############
 
@@ -27,7 +28,7 @@ def saveData ( data ):
             'adjectives ',
         ') VALUES ( ',
             '"', _db.escape( data['title'] ), '", ',
-            '"', _db.escape( data['summary'].encode('utf-8').strip() ), '", ',
+            '"', _db.escape( data['summary'] ), '", ',
             '"', _db.escape( data['categories'] ), '", ',
             '"', _db.escape( data['nouns'] ), '", ',
             '"', _db.escape( data['adjectives'] ), '" '

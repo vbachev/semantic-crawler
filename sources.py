@@ -10,6 +10,8 @@ import re
 import urllib2
 import wikipedia
 
+# URL and regex for crawiling and parsing categories 
+# from raw wiki markup 
 wikipediaURL = 'http://en.wikipedia.org/w/index.php?action=raw&title='
 wikipediaCategoriesRegex = '\[\[Category\:([^\]]+)\]\]'
 
@@ -19,7 +21,7 @@ def getWikipediaData ( term ):
     page = wikipedia.page( term )
     result = {
         'title' : page.title,
-        'summary' : page.summary,
+        'summary' : page.summary.encode('utf-8').strip()
     }
     
     # get raw wiki markup and parse categories

@@ -16,5 +16,6 @@ for sourceHandler in sources.queryHandlers:
         data = sourceHandler( term )
         analyzer.parse( data )
         database.saveData( data )
+        
 
 database.disconnect()
