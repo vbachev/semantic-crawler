@@ -1,12 +1,16 @@
 import nltk
 
+# word categories from the Brown tagset that represent 
+# nouns and adjectives
 adjectiveTags = [ 'JJ', 'JJR', 'JJS', 'JJT' ]
 nounTags = [ 'NN', 'NNP', 'NNS', 'NNPS' ]
 
 def parse ( data ):
+    # tokenize and tag the summary text
     words = nltk.tokenize.word_tokenize( data['summary'] )
     taggedWords = nltk.pos_tag( words )
     
+    # take out nouns and adjectives
     nouns = []
     adjectives = []
     for item in taggedWords:

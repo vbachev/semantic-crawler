@@ -13,7 +13,7 @@ def connect ():
 
 def saveData ( data ):
     ############
-    # TEMP MOCK OF DATA RECORDI
+    # TEMP MOCK OF DATA RECORDING
     for key in data:
         print key + ': ' + data[key]
     return
