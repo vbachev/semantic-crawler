@@ -1,27 +1,23 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import database
+import sys
+import json
 import sources
 import analyzer
 
-database.connect()
-
 # get the search terms that will be crawled
-# expected result: ((term1, 1), (term2, 2), (term3, 3))
-searchTerms = database.getSearchTerms()
+searchTerms = sys.argv
+searchTerms.pop(0)
 
 # fetch data for all terms from all sources, 
-# analyze the data and store the results in DB
+# analyze the data and print the results
 for sourceHandler in sources.queryHandlers:
     for term in searchTerms:
 
         # get raw search data from this source
-        data = sourceHandler( term['name'] )
+        data = sourceHandler( term.decode('utf-8') )
 
         # parse raw data into semantic information
         analyzer.parse( data )
 
-        # store in the database
-        database.saveData( data, term['id'] )
-
-database.disconnect()
+        print json.dumps(data).encode('utf-8')

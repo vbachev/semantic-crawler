@@ -1,3 +1,5 @@
+# This file uses the natural language processing toolkit to parse the 
+# crawled summary text and derive it's adjectives and nouns 
 import nltk
 
 # word categories from the Brown tagset that represent 

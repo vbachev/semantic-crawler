@@ -4,6 +4,9 @@
 # handler function in the **queryHandlers** list. This 
 # list is used externaly by the module consumers to 
 # loop over all sources and request data from each one.
+# 
+# It currently features only Wikipedia searching but can 
+# be easily extended with other sources
 queryHandlers = []
 
 import re
@@ -21,7 +24,7 @@ def getWikipediaData ( term ):
     page = wikipedia.page( term )
     result = {
         'title' : page.title,
-        'summary' : page.summary.encode('utf-8').strip()
+        'summary' : page.summary.strip()
     }
     
     # get raw wiki markup and parse categories
